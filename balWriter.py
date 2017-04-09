@@ -3,7 +3,7 @@ import datetime
 import time
 
 def balanceWriter(source, balance_str):
-    filename = '/home/incogrev/BTC_Wallet/datafiles/' + source + 'Balance.csv'
+    filename = '/home/incogrev/BTC_Wallet/datafiles/' + source.lower() + 'Balance.csv'
     f = open(filename, 'a')
     try:
         f.write(balance_str)
