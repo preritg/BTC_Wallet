@@ -1,7 +1,7 @@
 from coinbase.wallet.client import Client
 import datetime
 import time
-
+import balWriter
 
 def coinbaseBalance(cbKey, cbSecret):
     '''usage from coinbase.wallet.client import Client
@@ -16,3 +16,9 @@ def coinbaseBalance(cbKey, cbSecret):
     coinBalance = ['coinbase', float(balance), 'fetch time', ts]
     coinBalance = [str(ele) for ele in coinBalance]
     return ','.join(coinBalance)
+
+
+cbKey = 'MggWgfNwIp5sigzq'
+cbSecret = 'Y7Knb9L6sJdLSOEHhqP36xhHz0iuEiY3'
+
+balWriter.balanceWriter('coinbase', coinbaseBalance(cbKey,cbSecret))

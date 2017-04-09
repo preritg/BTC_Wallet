@@ -6,9 +6,9 @@ import hashlib
 import time
 import hmac
 import datetime
+import balWriter
 
 bitfinexURL = 'https://api.bitfinex.com/v1/balances'
-
 #print("BitFinex")
 
 def bitfinexBal(key, secret):
@@ -40,9 +40,10 @@ def bitfinexBal(key, secret):
     #print('Response Content: '+ str(r.content))
     
     currency_json = r.json()
-    currency_list = []
+    currency_dict = []
     for ele in currency_json:
-        currency_list.append({ele["currency"].upper():float(ele["amount"])})
+        #currency_dict[ele['currency'].upper()] = float(ele['amount'])
+        currency_dict.append({ele["currency"].upper():float(ele["amount"])})
 
     coin_list = {}
     for ele in currency_dict:
@@ -69,4 +70,12 @@ def bitfinexBal(key, secret):
     balance = sum(wallet_balance.values())
     #print (sum(wallet_balance.values()))
     coinBalance = ['bitfinex', balance, ts]
+    coinBalance = [str(ele) for ele in coinBalance]
     return ','.join(coinBalance)
+
+
+bitfinexKey = 'ktooMrGqsvxWEs0UVB3f0ZYOgafCESK1szs9KsbZ4Mq'
+bitfinexSecret = b'x0axXXSMhjUCQLu7kZwmpqtHe8s7UOtuLFm62WkHYRR' #the b is deliberate, encodes to bytes
+
+
+balWriter.balanceWriter('bitfinex', bitfinexBal(bitfinexKey, bitfinexSecret))
