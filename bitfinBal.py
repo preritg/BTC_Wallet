@@ -8,6 +8,7 @@ import hmac
 import datetime
 import balWriter
 
+
 bitfinexURL = 'https://api.bitfinex.com/v1/balances'
 #print("BitFinex")
 
@@ -69,7 +70,7 @@ def bitfinexBal(key, secret):
             #print(coin, ':', 1)
     balance = sum(wallet_balance.values())
     #print (sum(wallet_balance.values()))
-    coinBalance = ['bitfinex', balance, ts]
+    coinBalance = ['bitfinex', 'income', balance, ts]
     coinBalance = [str(ele) for ele in coinBalance]
     return ','.join(coinBalance)
 

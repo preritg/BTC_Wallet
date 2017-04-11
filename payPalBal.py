@@ -19,7 +19,7 @@ def payPalBalance(user, pwd, signature):
 	balance = balance_str[balance_str.index('AMT0=')+5:balance_str.index('&')].replace('%2e','.')
 	#balance = balance_str
 	balance = float(balance)
-	accBalance = ['paypal', balance, ts]
+	accBalance = ['paypal', 'income', balance, ts]
 	accBalance = [str(ele) for ele in accBalance]
 	return ','.join(accBalance)
 

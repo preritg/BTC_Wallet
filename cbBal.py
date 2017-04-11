@@ -13,7 +13,7 @@ def coinbaseBalance(cbKey, cbSecret):
     accInfo = client.get_accounts()
     balance = accInfo['data'][0]['native_balance']['amount']
     ts =  datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
-    coinBalance = ['coinbase', float(balance), ts]
+    coinBalance = ['coinbase', 'income', float(balance), ts]
     coinBalance = [str(ele) for ele in coinBalance]
     return ','.join(coinBalance)
 

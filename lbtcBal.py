@@ -13,7 +13,7 @@ def lbcBalance(lbcKey, lbcSecret):
     lbcBal = conn.call('GET', '/api/wallet-balance/').json()
     ts =  datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
     balance = lbcBal["data"]['total']['balance']
-    coinBalance = ['localbtc', float(balance), ts]
+    coinBalance = ['localbtc', 'income', float(balance), ts]
     coinBalance = [str(ele) for ele in coinBalance]
     return ','.join(coinBalance)
 

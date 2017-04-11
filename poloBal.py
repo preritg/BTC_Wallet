@@ -22,7 +22,7 @@ def poloniexBalance(poloKey, poloSecret):
     btc_price = price_json['bpi']['USD']['rate_float']
 
     balance = float(walletBal['BTC']['btcValue'])*btc_price
-    coinBalance = ['poloniex', balance, ts]
+    coinBalance = ['poloniex', 'income', balance, ts]
     coinBalance = [str(ele) for ele in coinBalance]
     return ','.join(coinBalance)
 
