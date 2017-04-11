@@ -28,6 +28,9 @@ dfRevenue = pd.DataFrame()
 for file in dirs:
     rec = pd.read_csv(path+file).tail(1).fillna(0)
     dfRevenue = pd.concat([dfRevenue, rec])
+
+revenue_col = ['source', 'balance', 'timestamp']
+dfRevenue = dfRevenue[revenue_col]
 dfRevenue = dfRevenue.reset_index(drop=True)
 print("\nRevenue")
 print(dfRevenue)
