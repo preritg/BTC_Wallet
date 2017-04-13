@@ -95,8 +95,9 @@ existingPnL = pd.concat([existingPnL, dfPnL]).fillna(0)
 
 # In[185]:
 
-col_list = ['date', 'revenue', 'expense', 'PnL']
+col_list = ['date', 'revenue', 'expense']
 existingPnL = existingPnL[col_list]
+existingPnL['PnL'] = existingPnL['revenue'] - existingPnL['expense']
 existingPnL = existingPnL.sort_values(by = 'date').reset_index(drop = True)
 
 

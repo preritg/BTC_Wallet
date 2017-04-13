@@ -9,6 +9,7 @@ def poloniexBalance(poloKey, poloSecret):
     ''' Usage import poloniex
     poloniexBalance(key, secret)
     '''
+    poloniex.Poloniex.nonce = time.time() * 1000099990
     polo = poloniex.Poloniex()
     polo.Key = poloKey
     polo.Secret = poloSecret
