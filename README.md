@@ -1,2 +1,24 @@
 # BTC_Wallet
-usage iunstructions to follow soon
+install following libraries:
+python2:-
+sys
+datetime
+time
+coinbase
+lbcapi 
+requests
+poloniex
+json
+
+
+python3:-
+requests
+json
+base64
+hashlib
+time
+hmac
+datetime
+pandas 
+os
+sys
