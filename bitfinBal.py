@@ -75,8 +75,8 @@ def bitfinexBal(key, secret):
     return ','.join(coinBalance)
 
 
-bitfinexKey = 'ktooMrGqsvxWEs0UVB3f0ZYOgafCESK1szs9KsbZ4Mq'
-bitfinexSecret = b'x0axXXSMhjUCQLu7kZwmpqtHe8s7UOtuLFm62WkHYRR' #the b is deliberate, encodes to bytes
+bitfinexKey = '<key_here>'
+bitfinexSecret = b'<secret_key_here>' #the b is deliberate, encodes to bytes
 
 
 balWriter.balanceWriter('bitfinex', bitfinexBal(bitfinexKey, bitfinexSecret))
