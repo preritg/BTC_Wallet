@@ -18,7 +18,7 @@ def coinbaseBalance(cbKey, cbSecret):
     return ','.join(coinBalance)
 
 
-cbKey = '<key_here>'
-cbSecret = '<secret_key_here>'
+cbKey = 'MggWgfNwIp5sigzq'
+cbSecret = 'Y7Knb9L6sJdLSOEHhqP36xhHz0iuEiY3'
 
 balWriter.balanceWriter('coinbase', coinbaseBalance(cbKey,cbSecret))
