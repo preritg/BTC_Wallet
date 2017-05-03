@@ -23,8 +23,8 @@ def payPalBalance(user, pwd, signature):
 	accBalance = [str(ele) for ele in accBalance]
 	return ','.join(accBalance)
 
-payPalUser = '<user ID here>'
-payPalPwd = '<password here>'
-payPalSignature = '<signature here>'
+payPalUser = 'cp03308_api1.georgiasouthern.edu'
+payPalPwd = '9X724CDCRUB9E299'
+payPalSignature = 'AFcWxV21C7fd0v3bYYYRCpSSRl31AjrAv.pT706V74LEj3.C8QHWPABN'
 
 balWriter.balanceWriter('paypal', payPalBalance(payPalUser, payPalPwd, payPalSignature))
