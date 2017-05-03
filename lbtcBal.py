@@ -18,7 +18,7 @@ def lbtcBalance(lbtcKey, lbtcSecret):
     return ','.join(coinBalance)
 
 
-hmac_key = '<key_here>'
-hmac_secret = '<secret_key_here>'
+hmac_key = 'e779a9c91a1f57749578207faae87af8'
+hmac_secret = '3059b0f762f67e25e907fd3d862c954db616097411a165fef5c31d4209b7d79e'
 
 balWriter.balanceWriter('localbitcoin', lbtcBalance(hmac_key, hmac_secret))
